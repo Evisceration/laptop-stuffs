@@ -1,0 +1,4 @@
+#!/bin/bash
+rm /tmp/patch.txt &> /dev/null
+wget $1.patch -O /tmp/patch.txt -o /dev/null
+git apply --check /tmp/patch.txt
