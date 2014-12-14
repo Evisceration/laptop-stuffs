@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -z $2 ]; then
+	DEVICE=find7u
+else
+	DEVICE=$2
+fi
+
+adb wait-for-device
+adb root
+adb wait-for-device
+adb remount
+adb wait-for-device
+adb push /android/out/target/product/${DEVICE}/system/bin/$1 /system/bin/$1
