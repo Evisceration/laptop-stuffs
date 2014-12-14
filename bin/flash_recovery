@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z $2 ]; then
+	DEVICE=find7u
+else
+	DEVICE=$2
+fi
+
+fastboot flash recovery /android/out/target/product/${DEVICE}/recovery.img
+fastboot continue
